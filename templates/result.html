@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlastDetect: Detection Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/background.jpg'); /* Use the same background image */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff0000;
+            
+        }
+        p {
+            text-align: justify;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            padding: 0 20px; /* Add padding to improve readability */
+        }
+        #image-preview {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            display: block;
+            border-radius: 8px; /* Add border radius for image */
+            box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Add shadow effect for image */
+        }
+        .info-box {
+            background-color: #f8f9fa; /* Light gray background */
+            border-left: 4px solid #007bff; /* Blue left border */
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .back-link {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .back-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Detection Result</h1>
+        <!-- Display detection results here -->
+        <div class="info-box">
+            <h2>Microplastic has been Detected in your sample</h2>
+            <p>Upon thorough analysis, the test results have revealed the presence of microplastics in the sample.</p>
+        </div>
+        <p>Microplastics are minuscule plastic particles measuring less than 5 millimeters in size. They can originate from various sources, including the breakdown of larger plastic items, microbeads used in personal care products, and synthetic fibers from textiles.</p>
+        <p>The detection of microplastics raises concerns due to their potential detrimental effects on the environment and human health. These tiny plastic particles can accumulate in ecosystems, posing risks to marine life and contaminating food chains.</p>
+        <p>The test result image indicating the presence of microplastics has been securely saved in the local folder for further reference and documentation.</p>
+        <a class="back-link" href="javascript:history.back()">Try another test</a>
+    </div>
+</body>
+</html>

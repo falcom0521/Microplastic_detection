@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlastDetect: Advanced Microplastic Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/background.jpg'); 
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        p {
+            text-align: justify;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        form {
+            text-align: center;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .custom-file-upload {
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            color: #333;
+            font-weight: bold;
+        }
+        .custom-file-upload:hover {
+            background-color: #e0e0e0;
+        }
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        #image-preview {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced Microplastic Detection Web Tool</h1>
+        <p>Welcome to PlastDetect, your solution for identifying microplastics in electron microscopic images with precision. To get started, simply upload your electron microscopic image using the intuitive interface.</p>
+        <p>Our sophisticated algorithms will analyze the image, searching for characteristic features of microplastics.</p>
+        <p>If microplastics are detected, the results will be promptly saved in your designated runs folder for further analysis and reference. However, if no microplastics are found, the page will automatically refresh, allowing you to try again with another image or explore additional options.</p>
+        <p>PlastDetect empowers researchers, scientists, and environmental enthusiasts to contribute to the ongoing efforts in understanding and mitigating the impact of microplastics on our planet. Join us in the fight against plastic pollution today!</p> 
+        <form class="form-signin col-lg-3" method="post" enctype="multipart/form-data" name="form1">
+            <label for="inputfile" class="custom-file-upload">Choose File</label>
+            <input type="file" name="file" id="inputfile" onchange="previewImage(event)">
+            <br/><br/>
+            <img id="image-preview" src="#" alt="Uploaded Image Preview">
+            <button type="submit">Upload</button> 
+        </form>
+    </div>
+    
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var preview = document.getElementById('image-preview');
+                preview.src = reader.result;
+                preview.style.display = 'block';
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>

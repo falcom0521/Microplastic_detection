@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['Microplastic']
+
+roboflow:
+  workspace: panats-mp-project
+  project: microplastic-dataset
+  version: 19
+  license: Public Domain
+  url: https://universe.roboflow.com/panats-mp-project/microplastic-dataset/dataset/19
